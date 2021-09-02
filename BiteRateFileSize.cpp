@@ -11,9 +11,21 @@
 
 #define kMegaByte 8000
 
+double bitRate(double bitsPerSecond, double duration);
+
+double bitRate(double bitsPerSecond, double duration)
+{
+	double fileSize = (bitsPerSecond * duration) / kMegaByte;
+	printf("The file size is: %f MBs", fileSize);
+
+	return fileSize;
+}
+
 
 
 int main(void)
 {
+	bitRate(17406, 3);
+
 	return 0;
 }
