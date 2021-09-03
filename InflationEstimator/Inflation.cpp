@@ -15,12 +15,13 @@ double rateOfInflation(double prevPrice, double currentPrice);
 
 double rateOfInflation(double prevPrice, double currentPrice)
 {
+	char choice[11] = { 0 };
 	double inflationRate = 0.0;
 	do
 	{
 		inflationRate = (currentPrice - prevPrice) / prevPrice;
-		printf("%f\n", inflationRate);
-	} while ()
+		printf("%g\n", inflationRate);
+	} while (choice == "Yes");
 	
 	return inflationRate;
 }
