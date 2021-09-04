@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
 * Project		: Function Basics
@@ -15,19 +16,20 @@ double rateOfInflation(double prevPrice, double currentPrice);
 
 double rateOfInflation(double prevPrice, double currentPrice)
 {
-	char choice[11] = { 0 };
-	double inflationRate = 0.0;
-	do
-	{
-		inflationRate = (currentPrice - prevPrice) / prevPrice;
-		printf("%g\n", inflationRate);
-	} while (choice == "Yes");
-	
+	double inflationRate = (currentPrice - prevPrice) / prevPrice;
+	printf("%g", inflationRate);
 	return inflationRate;
 }
 
 int main(void)
 {
-	rateOfInflation(5.03, 5.79);
+	printf("Would you like to calculate the inflation rate? ");
+	char choice = getchar();
+	if (strcmp(&choice, "Yes"))
+	{
+		rateOfInflation(5.03, 5.79);
+	}
+
+	
 	return 0;
 }
