@@ -30,12 +30,8 @@ double rateOfInflation(double prevPrice, double currentPrice)
 int main(void)
 {
 	double prevPrice = 0.0;
-	printf("What is the original cost of the item? ");
-	scanf("%f", &prevPrice);
-
 	double currentPrice = 0.0;
-	printf("What is the cost now? ");
-	scanf("%f", &currentPrice);
+	// Try with cin, cout...
 
 
 	while (rateOfInflation(prevPrice, currentPrice));
