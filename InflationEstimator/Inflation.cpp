@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <iostream>
 
 /*
 * Project		: Function Basics
@@ -10,31 +10,34 @@
 */
 
 
+using namespace std;
 
 
 double rateOfInflation(double prevPrice, double currentPrice);
 
 double rateOfInflation(double prevPrice, double currentPrice)
 {
-	printf("Would you like to calculate the inflation rate? ");
-	char choice = getchar();
-	if (strcmp(&choice, "Yes"))
-	{
-		rateOfInflation(5.03, 5.79);
-	}
-	double inflationRate = (currentPrice - prevPrice) / prevPrice;
-	printf("%g", inflationRate);
+	double inflationRate = ((currentPrice - prevPrice) / prevPrice) * 100;
+	cout << "The inflation rate is: " << inflationRate << "%" << endl;
+
 	return inflationRate;
 }
 
 int main(void)
 {
-	double prevPrice = 0.0;
-	double currentPrice = 0.0;
-	// Try with cin, cout...
+	do
+	{
+		double oldPrice = 0.0;
+		double newPrice = 0.0;
 
+		cout << "Enter the price of item from previous year: ";
+		cin >> oldPrice;
 
-	while (rateOfInflation(prevPrice, currentPrice));
+		cout << "Enter the current price of the same item: ";
+		cin >> newPrice;
+
+		rateOfInflation(oldPrice, newPrice);
+	} while (true);
 	
 	return 0;
 }
