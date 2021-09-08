@@ -70,6 +70,13 @@ double jacketSize(int height, double weight, int age)
 
 
 
+/*
+* Function		: waistSize()
+* Description	: Calculates the waist size based on weight in lbs, and the wearer's age in years. For every two full years starting at 28, the waist sizing will be adjusted with an additional 1/10th of an inch
+* Parameters	: double weight, int age
+* Returns		: waist size, dimensionless
+*/
+
 double waistSize(double weight, int age);
 
 double waistSize(double weight, int age)
