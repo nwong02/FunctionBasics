@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /*
 * Project		: Clothing Sizes
@@ -59,7 +60,7 @@ double jacketSize(int height, double weight, int age)
 	{
 		jacketSizing = jacketSizing + (1 / 8);
 		
-		printf("Your jacket size: %f", jacketSizing);
+		printf("Your jacket size: %f\n", jacketSizing);
 		return jacketSizing;
 	}
 }
@@ -67,5 +68,7 @@ double jacketSize(int height, double weight, int age)
 int main()
 {
 	jacketSize(120, 53.5, 31);
+	float fraction = 1.0 / 8.0;
+	printf("%0.4f", fraction);
 	return 0;
 }
