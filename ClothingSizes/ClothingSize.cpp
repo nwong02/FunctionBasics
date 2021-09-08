@@ -56,19 +56,37 @@ double jacketSize(int height, double weight, int age);
 double jacketSize(int height, double weight, int age)
 {
 	double jacketSizing = (height * weight) / 288;
-	if (age > 30)
+	for (age = 30; ; age = age + 10)
 	{
-		jacketSizing = jacketSizing + (1 / 8);
+		jacketSizing = jacketSizing + (1.0 / 8.0);
 		
 		printf("Your jacket size: %f\n", jacketSizing);
 		return jacketSizing;
 	}
 }
 
+
+
+
+
+
+double waistSize(double weight, int age);
+
+double waistSize(double weight, int age)
+{
+	double waist = weight / 5.7;
+	for (age >= 28; age % 2 == 0; age++)
+	{
+		waist = waist + (1.0 / 10.0);
+	}
+	printf("Your waist size: %f", waist);
+	return waist;
+}
+
 int main()
 {
-	jacketSize(120, 53.5, 31);
+	jacketSize(120, 53.5, 50);
 	float fraction = 1.0 / 8.0;
-	printf("%0.4f", fraction);
+	// printf("%0.4f", fraction);
 	return 0;
 }
