@@ -20,7 +20,7 @@ double gravitationalForce(double bodyOne, double bodyTwo, double radialDist)
 	double distanceSquare = pow(radialDist, 2);
 	double gravitationalForce = kGravitationalConstant * (bodyOne * bodyTwo) / distanceSquare;
 	
-	printf("The gravitational force between these two bodies is: %e\n", gravitationalForce);
+	printf("The gravitational force between these two bodies is: %e N\n", gravitationalForce);
 
 	return gravitationalForce;
 }
