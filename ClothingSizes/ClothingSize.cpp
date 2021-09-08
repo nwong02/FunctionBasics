@@ -57,15 +57,14 @@ double jacketSize(int height, double weight, int age)
 {
 	double jacketSizing = (height * weight) / 288;
 
-	if (age >= 30)
+	int ageCounter = (age - 30) / 10;
+
+	for (age >= 30; age % 10 == 0; age++)
 	{
-		if (age % 10 == 0)
-		{
-			jacketSizing = jacketSizing + (1.0 / 8.0);
-		}
-		
+
+		jacketSizing = jacketSizing + (1.0 / 8.0);
+		printf("Your jacket size: %f\n", jacketSizing);
 	}
-	printf("Your jacket size: %f\n", jacketSizing);
 	return jacketSizing;
 }
 
