@@ -29,18 +29,18 @@ double gravitationalForce(double bodyOne, double bodyTwo, double radialDist)
 
 int main()
 {
-	double massOne = 0.0;
-	double massTwo = 0.0;
-	double distance = 0.0;
+	float massOne = 0.0;
+	float massTwo = 0.0;
+	float distance = 0.0;
 	
-	printf("Enter the value of the first mass: ");
-	scanf_s("%f", &massOne);
+	printf("Enter the value of the first mass in kg: ");
+	scanf_s("%d", &massOne);
 	
-	printf("Enter the value of the second mass: ");
-	scanf_s("%f", &massTwo);
+	printf("Enter the value of the second mass in kg: ");
+	scanf_s("%d", &massTwo);
 
-	printf("Enter the radial distance: ");
-	scanf_s("%f", &distance);
+	printf("Enter the radial distance in metres: ");
+	scanf_s("%d", &distance);
 
 	gravitationalForce(massOne, massTwo, distance);
 
