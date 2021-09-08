@@ -97,6 +97,7 @@ double waistSize(double weight, int age)
 int main()
 {
 	jacketSize(120, 53.5, 80);
+	waistSize(120, 50);
 	/*for (int i = 0; i < 100; i++)
 	{
 		if (i % 10 == 0)
