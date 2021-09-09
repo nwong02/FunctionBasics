@@ -24,19 +24,19 @@ double distance(double x_1, double y_1, double x_2, double y_2);
 
 double distance(double x_1, double y_1, double x_2, double y_2)
 {
-	x_1 = 0.0;
+	x_1 = 0.0;						// Initial points set to (0, 0)
 	y_1 = 0.0;
 	x_2 = 0.0;
 	y_2 = 0.0;
 
-	char xOne[10] = { 0 };
+	char xOne[10] = { 0 };			// Buffers for each point, recast later
 	char yOne[10] = { 0 };
 	char xTwo[10] = { 0 };
 	char yTwo[10] = { 0 };
 
 	printf("Enter any point for x_1: ");
 	fgets(xOne, 10, stdin);
-	x_1 = atof(xOne);
+	x_1 = atof(xOne);				// Recast entry into a floating variable
 
 	printf("Enter any point for y_1: ");
 	fgets(yOne, 10, stdin);
