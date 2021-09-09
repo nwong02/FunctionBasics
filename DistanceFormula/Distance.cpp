@@ -59,6 +59,6 @@ double distance(double x_1, double y_1, double x_2, double y_2)
 
 int main()
 {
-	distance(2, 2, 5, 5);
+	distance(2, 2, 5, 5);			// Input values kind of irrelevant in the function call
 	return 0;
 }
