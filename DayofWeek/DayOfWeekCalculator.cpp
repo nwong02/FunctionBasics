@@ -145,9 +145,11 @@ int getMonthValue(int month, int year)
 
 
 
-char date(int getMonthValue(), int getYearValue(), int getCenturyValue())
+char date(int getMonthValue(), int getYearValue(), int getCenturyValue(), int day)
 {
-
+	int date = day + getMonthValue() + getCenturyValue();
+	date = date / 7;
+	return date;
 }
 
 
