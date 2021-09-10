@@ -144,20 +144,28 @@ int getMonthValue(int month, int year)
 }
 
 
-
-char date(int getMonthValue(), int getYearValue(), int getCenturyValue(), int day)
+int getDate()
 {
-	int date = day + getMonthValue() + getCenturyValue();
-	date = date / 7;
-	return date;
+	char number[11] = { 0 };
+	int num = 0;
+	fgets(number, sizeof(number), stdin);
+	if (sscanf(number, "%d", &num) != 1)
+	{
+		num = -1;
+	}
+	return num;
 }
 
 
 int main(void)
 {
-	getMonthValue(2, 2020);
-	/*getYearValue(2008);
-	getCenturyValue(2008);
-	isLeapYear(2017);*/
+	printf("Enter the date you would like to find the day of week it falls on.\n");
+	int date = getDate();
+	int month = getDate();
+	int year = getDate();
+
+	date = date + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year);
+
+
 	return 0;
 }
