@@ -144,12 +144,12 @@ int getMonthValue(int month, int year)
 }
 
 
-int getDate()
+int getNum()
 {
 	char number[11] = { 0 };
 	int num = 0;
 	fgets(number, sizeof(number), stdin);
-	if (sscanf(number, "%d", &num) != 1)
+	if (sscanf_s(number, "%d", &num) != 1)
 	{
 		num = -1;
 	}
@@ -160,12 +160,21 @@ int getDate()
 int main(void)
 {
 	printf("Enter the date you would like to find the day of week it falls on.\n");
-	int date = getDate();
-	int month = getDate();
-	int year = getDate();
+	
+	printf("Enter the date: ");
+	int date = getNum();
+	
+	printf("Enter the month (numerical value): ");
+	int month = getNum();
 
-	date = date + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year);
+	printf("Enter the year: ");
+	int year = getNum();
 
+	int sum = date + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year);
+	printf("%d", sum);
+
+	int dayOfWeek = sum % 7;
+	printf("%d", dayOfWeek);
 
 	return 0;
 }
