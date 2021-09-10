@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
 * File			: DayOfWeekCalculator.cpp
@@ -49,7 +50,7 @@ int getCenturyValue(int year)
 {
 	int remainingValue = (year / 100) % 4;
 	int remainder = (3 - remainingValue) * 2;
-	printf("%d\n", remainder);
+	//printf("%d\n", remainder);
 	return remainder;
 }
 
@@ -144,6 +145,18 @@ int getMonthValue(int month, int year)
 }
 
 
+
+
+
+/*
+* Function		: getNum
+* Description	: Function prompts user for a number and stores in character array, returns that number, -1 if unrecognised
+* Parameters	: None
+* Returns		: Number provided by user
+*/
+
+int getNum();
+
 int getNum()
 {
 	char number[11] = { 0 };
@@ -155,6 +168,32 @@ int getNum()
 	}
 	return num;
 }
+
+enum Weekday { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday};
+
+const char* myName()
+{
+	char name[10] = "Nelson";
+	return name;
+}
+
+
+int day(int remainderValue)
+{
+	if (remainderValue == 1)
+	{
+		printf("This falls on a Sunday1");
+	}
+	else if (remainderValue == 2)
+	{
+		printf("This falls on a Monday!");
+	}
+	else if (remainderValue == 3)
+	{
+		printf("This falls on a Tuesday!");
+	}
+}
+
 
 
 int main(void)
@@ -171,10 +210,10 @@ int main(void)
 	int year = getNum();
 
 	int sum = date + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year);
-	printf("%d", sum);
+	printf("%d\n", sum);
 
 	int dayOfWeek = sum % 7;
-	printf("%d", dayOfWeek);
+	printf("%d\n", dayOfWeek);
 
 	return 0;
 }
