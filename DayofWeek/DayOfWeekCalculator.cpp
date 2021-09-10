@@ -63,6 +63,8 @@ int getCenturyValue(int year)
 * Returns		: Value of remainder divided by 4 and last digits in year
 */
 
+int getYearValue(int year);
+
 int getYearValue(int year)
 {
 	int lastDigits = year % 100;
@@ -72,6 +74,14 @@ int getYearValue(int year)
 
 
 
+/*
+* Function		: getMonthValue
+* Description	: Function will return a value based on the table given in the text (Savitch 7th ed.), invoking the leap year condition.
+* Parameters	: int month, int year
+* Returns		: Return value corresponding to each month
+*/
+
+int getMonthValue(int month, int year);
 
 int getMonthValue(int month, int year)
 {
@@ -79,13 +89,73 @@ int getMonthValue(int month, int year)
 	switch (month)
 	{
 	case 1:
+		if (isLeapYear(year) == true)
+		{
+			monthReturnValue = 6;
+		}
+		else
+		{
+			monthReturnValue = 0;
+		}
+		break;
+	case 2:
+		if (isLeapYear(year) == true)
+		{
+			monthReturnValue = 2;
+		}
+		else
+		{
+			monthReturnValue = 3;
+		}
+		break;
+	case 3:
+		monthReturnValue = 3;
+		break;
+	case 4:
+		monthReturnValue = 6;
+		break;
+	case 5:
+		monthReturnValue = 1;
+		break;
+	case 6: 
+		monthReturnValue = 4;
+		break;
+	case 7:
+		monthReturnValue = 6;
+		break;
+	case 8:
+		monthReturnValue = 2;
+		break;
+	case 9:
+		monthReturnValue = 5;
+		break;
+	case 10: 
+		monthReturnValue = 0;
+		break;
+	case 11:
+		monthReturnValue = 3;
+		break;
+	case 12:
+		monthReturnValue = 5;
+		break;
 	}
+
+	return monthReturnValue;
 }
+
+
+
+char date(int getMonthValue(), int getYearValue(), int getCenturyValue())
+{
+
+}
+
 
 int main(void)
 {
-	getYearValue(2008);
+	getMonthValue(2, 2020);
+	/*getYearValue(2008);
 	getCenturyValue(2008);
-	isLeapYear(2017);
+	isLeapYear(2017);*/
 	return 0;
 }
