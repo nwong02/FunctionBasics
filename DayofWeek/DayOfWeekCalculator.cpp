@@ -180,18 +180,35 @@ const char* myName()
 
 int day(int remainderValue)
 {
-	if (remainderValue == 1)
+	if (remainderValue == 0)
 	{
 		printf("This falls on a Sunday1");
 	}
-	else if (remainderValue == 2)
+	else if (remainderValue == 1)
 	{
 		printf("This falls on a Monday!");
 	}
-	else if (remainderValue == 3)
+	else if (remainderValue == 2)
 	{
 		printf("This falls on a Tuesday!");
 	}
+	else if (remainderValue == 3)
+	{
+		printf("This falls on a Wednesday!");
+	}
+	else if (remainderValue == 4)
+	{
+		printf("This falls on a Thursday!");
+	}
+	else if (remainderValue == 5)
+	{
+		printf("This falls on a Friday!");
+	}
+	else
+	{
+		printf("This falls on a Saturday!");
+	}
+	return remainderValue;
 }
 
 
